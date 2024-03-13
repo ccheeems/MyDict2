@@ -79,6 +79,37 @@ class _DictionaryHomePageState extends State<DictionaryHomePage> {
       });
     }
   }
+
+  child: TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  labelText: 'Search',
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 221, 175, 77)),
+                  border: InputBorder.none,
+                  prefixIcon: Icon(Icons.search),
+                ),
+                onChanged: (value) => _currentWord = value,
+                style: TextStyle(
+                    color: Colors.black), // Change text color to black
+              ),
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {
+                _searchWord(_currentWord);
+              },
+              child: Text('Find Dict!!'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Color.fromARGB(255, 221, 175, 77), // background color
+                foregroundColor: Colors.white, // text color
+                padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 15.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+            ),
   
 
 
