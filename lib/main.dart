@@ -79,6 +79,49 @@ class _DictionaryHomePageState extends State<DictionaryHomePage> {
       });
     }
   }
+
+  SizedBox(height: 20.0),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: RichText(
+                    textAlign: TextAlign.justify, // Align text to the right
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 18.0),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: _currentWord,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize:
+                                30.0, // Set bigger font size for the main word
+                          ),
+                        ),
+                        TextSpan(
+                          text: '\n\n$_definition',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
   
 
 
